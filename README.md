@@ -146,6 +146,12 @@ add_action( 'loop_start', function() {
 
 You can learn more about Whoops by visiting [http://filp.github.io/whoops/](http://filp.github.io/whoops/).
 
+Whoops can open referenced files directly in your IDE or editor. To see the list of supported editors, visit [https://github.com/filp/whoops/blob/master/docs/Open%20Files%20In%20An%20Editor.md](https://github.com/filp/whoops/blob/master/docs/Open%20Files%20In%20An%20Editor.md).
+
+To select your editor, define the WHOOPS_EDITOR constant in wp-config.php, eg
+
+    define( 'WHOOPS_EDITOR', 'sublime' );
+
 ## Backtracing the Call Stack
 
 When debugging, there are times when you need to see the order in which functions were called that lead to a certain point in the program.  PHP offers a backtrace that traces back the execution order from the point when the function is invoked.

@@ -35,7 +35,13 @@ function _setup_plugin() {
  */
 function _setup_whoops() {
 	$whoops = new Run();
-	$whoops->pushHandler( new PrettyPageHandler() );
+	$pretty_page_handler = new PrettyPageHandler();
+
+	if ( defined( 'WHOOPS_EDITOR' ) ) {
+		$pretty_page_handler->setEditor( WHOOPS_EDITOR );
+	}
+
+	$whoops->pushHandler( $pretty_page_handler );
 	$whoops->register();
 }
 
